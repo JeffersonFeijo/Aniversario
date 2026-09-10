@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️Aniversário Di Pincesa❤️</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffc0cb; /* Fundo rosa */
+            background-image: url('./Set.png');
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            background-size: cover;
+        }
+
+        /* Estilo da imagem de referência base */
+        .container {
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            color: #8b008b;
+            margin-top: 20px;
+            text-shadow: 1px 1px 2px white;
+        }
+
+        /* Estilo do bolo clicável */
+        .bolo {
+            cursor: pointer;
+            transition: transform 0.2s;
+            width: 280px;
+        }
+
+        .bolo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Caixa de texto que aparece no meio (Modal) */
+        .modal {
+            display: none; /* Começa oculta */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro transparente */
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .modal-conteudo {
+            background-color: #fff0f5;
+            padding: 30px;
+            border-radius: 15px;
+            border: 4px solid #ff69b4;
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .modal-conteudo h2 {
+            color: #d147a3;
+            margin-top: 0;
+        }
+
+        .modal-conteudo p {
+            color: #555;
+            font-size: 18px;
+        }
+
+        /* Botão de fechar a caixa */
+        .fechar {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
+        .fechar:hover {
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Substitua 'bolo.png' pelo link ou caminho da imagem do bolo -->
+        <img src="bolo.png" alt="Bolo de Aniversário" class="bolo" id="btnBolo">
+        <h1>CLIQUE NO BOLO</h1>
+    </div>
+
+    <!-- Caixa de Mensagem (Pop-up) -->
+    <div class="modal" id="modalMensagem">
+        <div class="modal-conteudo">
+            <h2>Feliz Aniversário! Minha Princesa</h2>
+            <p>Hoje e seu dia, eu queria te dizer que você e a melhor mulher do mundo pra mim você e incrivel uma mulher foda D+ vc e tudo e muitoo mais do que pedi a deus vc e incrivel eu te amo do fundo do meu coração queria ter feito mais coisas mas acabo n dando certo tudo oq planejei pra fazer mas n queria deixar passar em branco muito obrigado por ser essa mulher incrivel eu te amo muitoooo minha vidaa </p>
+            <p>❤️feliz 21 anos minha pincesa❤️</p>
+            <p>Com amor, nenem</p>
+            <button class="fechar" id="btnFechar">Fechar</button>
+        </div>
+    </div>
+
+    <script>
+        const bolo = document.getElementById('btnBolo');
+        const modal = document.getElementById('modalMensagem');
+        const fechar = document.getElementById('btnFechar');
+
+        // Quando clicar no bolo, mostra a caixa
+        bolo.addEventListener('click', () => {
+            modal.style.display = 'flex';
+        });
+
+        // Quando clicar no botão fechar, esconde a caixa
+        fechar.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Se clicar fora da caixa de texto, também fecha
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>
